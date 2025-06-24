@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Replace this with your actual Slack Webhook URL
-SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/..."  # 🔒 keep this secure in prod
+SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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"
 
 @app.route("/")
 def home():

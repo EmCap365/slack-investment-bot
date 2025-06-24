@@ -14,6 +14,8 @@ def post_to_slack():
         "text": message
     }
 
+    print("Sending to Slack:", slack_data)
+    
     response = requests.post(SLACK_WEBHOOK_URL, json=slack_data)
 
     if response.status_code != 200:

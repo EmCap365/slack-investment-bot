@@ -1,11 +1,17 @@
 from flask import Flask, request, jsonify
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# Actual Slack Webhook URL
-SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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"
+# Load Slack Webhook URL from environment variable
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
+
+if not SLACK_WEBHOOK_URL:
+    raise ValueError("Missing Slack webhook URL! Please set SLACK_WEBHOOK_URL environment variable.")
 
 @app.route("/")
 def home():
